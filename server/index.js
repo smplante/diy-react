@@ -8,6 +8,7 @@ const mockResponse = {
   bar: 'foo'
 };
 app.use(express.static(DIST_DIR));
+app.use('/health',(req,res) => res.status(200).send());
 app.get('/api', (req, res) => {
   res.send(mockResponse);
 });
